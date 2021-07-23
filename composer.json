@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "koukibuu3/heroku-docker-app",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Laravel docker application runnning on the Heroku.",
+    "keywords": ["laravel", "docker", "heroku"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
