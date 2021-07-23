@@ -1,4 +1,5 @@
 {
+    "name": "heroku-docker-app",
     "private": true,
     "scripts": {
         "dev": "npm run development",
