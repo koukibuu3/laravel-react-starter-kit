@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext",
+        ],
+        "baseUrl": "resources/ts",
+        "outDir": "public/js",
+        "jsx": "preserve",
+        "allowJs": true,
+        "strict": false,
+        // 暗黙的に any になる値を許可しない
+        "noImplicitAny": true,
+        // CommonJSモジュールとESモジュール間の相互運用を可能にする
+        "esModuleInterop": true,
+        // 型宣言ファイルの型チェックをスキップする
+        "skipLibCheck": true,
+        // exportしないモジュールからのimportを許可する
+        "allowSyntheticDefaultImports": true,
+        // import時にファイルパスの大文字小文字を区別する
+        "forceConsistentCasingInFileNames": true,
+    },
+    "include": [
+        "resources/ts/**/*",
+    ]
+}
