@@ -9,7 +9,9 @@
         "prod": "mix --production",
         "lint": "eslint ./resources/ts/*",
         "tsc": "tsc --noEmit",
-        "heroku-postbuild": "npm run prod"
+        "lint-staged": "lint-staged",
+        "heroku-postbuild": "npm run prod",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.13.13",
@@ -41,5 +43,13 @@
     "eslintIgnore": [
         "/.eslintrc.js",
         "/webpack.mix.js"
-    ]
+    ],
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint"
+        ],
+        "*.php": [
+            "composer cs"
+        ]
+    }
 }
