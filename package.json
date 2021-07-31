@@ -2,13 +2,11 @@
     "name": "heroku-docker-app",
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
+        "dev": "mix",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production",
+        "prod": "mix --production",
         "lint": "eslint ./resources/ts/*",
         "tsc": "tsc --noEmit",
         "heroku-postbuild": "npm run prod"
