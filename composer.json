@@ -45,7 +45,7 @@
             "@php artisan key:generate --ansi"
         ],
         "cs": [
-            "./vendor/bin/phpcs --standard=phpcs.xml ./"
+            "./vendor/bin/phpcs --standard=phpcs.xml"
         ]
     },
     "extra": {
