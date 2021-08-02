@@ -7,7 +7,7 @@ services :
       context: .
       dockerfile: .docker/web/Dockerfile
     ports:
-        - '8000:80'
+        - ${APP_PORT}:80
     volumes:
       - ./:/var/www/html/:cached
     environment:
