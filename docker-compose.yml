@@ -9,4 +9,33 @@ services :
     ports:
         - '8000:80'
     volumes:
-      - ./:/var/www/html/
+      - ./:/var/www/html/:cached
+    environment:
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_HOST: database
+      DB_PORT: ${DB_PORT}
+      DB_DATABASE: ${DB_DATABASE:-postgres}
+      DB_USERNAME: ${DB_USERNAME:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+    tty: true
+    stdin_open: true
+    depends_on:
+      - database
+
+  database:
+    container_name: database
+    build:
+      context: .
+      dockerfile: .docker/database/Dockerfile
+    volumes:
+      - ./.database/data:/var/lib/postgresql/data:cached
+      - ./.database/logs:/var/log:cached
+    environment:
+      POSTGRES_DB: ${DB_DATABASE:-postgres}
+      POSTGRES_USER: ${DB_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_INITDB_ARGS: '--encoding=UTF-8 --locale=ja_JP.UTF-8'
+      TZ: Asia/Tokyo
+    ports:
+      - ${DB_PORT}:5432
