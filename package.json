@@ -45,7 +45,8 @@
     },
     "eslintIgnore": [
         "/.eslintrc.js",
-        "/webpack.mix.js"
+        "/webpack.mix.js",
+        "/tailwind.config.js"
     ],
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
