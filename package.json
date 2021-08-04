@@ -1,5 +1,5 @@
 {
-    "name": "heroku-docker-app",
+    "name": "laravel-react-starter-kit",
     "private": true,
     "scripts": {
         "dev": "mix",

@@ -1,8 +1,13 @@
 {
-    "name": "koukibuu3/heroku-docker-app",
+    "name": "koukibuu3/laravel-react-starter-kit",
     "type": "project",
     "description": "Laravel docker application runnning on the Heroku.",
-    "keywords": ["laravel", "docker", "heroku"],
+    "keywords": [
+        "laravel",
+        "react",
+        "docker",
+        "heroku"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
