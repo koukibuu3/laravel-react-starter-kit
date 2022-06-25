@@ -6,7 +6,6 @@
 - Tailwind CSS
 - Husky
 - ESLint
-- Stylelint
 
 # Getting Started
 
