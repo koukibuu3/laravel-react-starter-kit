@@ -12,7 +12,7 @@
         "format": "prettier --write --loglevel=warn ./resources/ts/*",
         "lint-staged": "lint-staged",
         "heroku-postbuild": "npm run prod",
-        "prepare": "husky install"
+        "prepare": "simple-git-hooks > /dev/null"
     },
     "dependencies": {
         "autoprefixer": "10.4.7",
@@ -41,14 +41,17 @@
         "eslint-plugin-jsx-a11y": "6.6.0",
         "eslint-plugin-react": "7.30.1",
         "eslint-plugin-react-hooks": "4.6.0",
-        "husky": "8.0.1",
-        "lint-staged": "13.0.3"
+        "lint-staged": "13.0.3",
+        "simple-git-hooks": "2.8.0"
     },
     "eslintIgnore": [
         "/.eslintrc.js",
         "/webpack.mix.js",
         "/tailwind.config.js"
     ],
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged"
+    },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
             "prettier --write --loglevel=error",
