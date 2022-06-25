@@ -2,6 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "esnext",
+        "moduleResolution": "node",
         "lib": ["dom", "dom.iterable", "esnext"],
         "baseUrl": "resources/ts",
         "outDir": "public/js",
