@@ -10,17 +10,9 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
     'prettier',
   ],
-  plugins: [
-    '@typescript-eslint',
-    'import',
-    'prettier',
-    'jsx-a11y',
-    'react',
-    'react-hooks',
-  ],
+  plugins: ['@typescript-eslint', 'import', 'jsx-a11y', 'react', 'react-hooks'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -52,17 +44,6 @@ module.exports = {
           caseInsensitive: false,
         },
       },
-    ],
-    // prettier に関する設定
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 120,
-        semi: false,
-        singleQuote: true,
-        tabWidth: 2,
-        trailingComma: 'es5',
-      }
     ],
     // ReactHooks に関する設定
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
