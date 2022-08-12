@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install libpq-dev
 RUN docker-php-ext-install pdo_pgsql
 
 # Composerのインストール
-COPY --from=composer:2.1.4 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.3.10 /usr/bin/composer /usr/bin/composer
 
 # Node.jsのインストール
 COPY --from=node:16.5.0 /usr/local/bin/node /usr/local/bin/
