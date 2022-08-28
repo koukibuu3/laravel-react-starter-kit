@@ -11,12 +11,12 @@ services :
     volumes:
       - ./:/var/www/html/:cached
     environment:
-      DB_CONNECTION: ${DB_CONNECTION}
-      DB_HOST: database
-      DB_PORT: ${DB_PORT}
-      DB_DATABASE: ${DB_DATABASE:-postgres}
-      DB_USERNAME: ${DB_USERNAME:-postgres}
-      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      DB_CONNECTION: ${DB_CONNECTION:-mysql}
+      DB_HOST: ${DB_HOST:-database}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_DATABASE: ${DB_DATABASE:-mysql}
+      DB_USERNAME: ${DB_USERNAME:-mysql}
+      DB_PASSWORD: ${DB_PASSWORD:-mysql}
     tty: true
     stdin_open: true
     depends_on:
@@ -28,14 +28,13 @@ services :
       context: .
       dockerfile: .docker/database/Dockerfile
     volumes:
-      - ./.database/data:/var/lib/postgresql/data:cached
+      - ./.database/data:/var/lib/mysql:cached
       - ./.database/logs:/var/log:cached
     environment:
-      POSTGRES_DB: ${DB_DATABASE:-postgres}
-      POSTGRES_USER: ${DB_USERNAME:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
-      PGDATA: /var/lib/postgresql/data/pgdata
-      POSTGRES_INITDB_ARGS: '--encoding=UTF-8 --locale=ja_JP.UTF-8'
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_DATABASE: ${DB_DATABASE:-mysql}
+      MYSQL_USER: ${DB_USERNAME:-mysql}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-mysql}
       TZ: Asia/Tokyo
     ports:
-      - ${DB_PORT}:5432
+      - ${DB_PORT}:3306
