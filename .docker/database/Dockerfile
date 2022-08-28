@@ -1,3 +1,3 @@
-FROM postgres:13.8-alpine
+FROM mysql:8.0
 
-WORKDIR /var/lib/postgresql/data/pgdata
+WORKDIR /var/lib/mysql

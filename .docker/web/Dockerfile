@@ -5,9 +5,9 @@ ENV DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-# pdo_pgsqlのインストール
+# pdo_mysqlのインストール
 RUN apt-get update && apt-get -y install libpq-dev
-RUN docker-php-ext-install pdo_pgsql
+RUN docker-php-ext-install pdo_mysql
 
 # Composerのインストール
 COPY --from=composer:2.3.10 /usr/bin/composer /usr/bin/composer
