@@ -13,8 +13,8 @@ RUN docker-php-ext-install pdo_pgsql
 COPY --from=composer:2.3.10 /usr/bin/composer /usr/bin/composer
 
 # Node.jsのインストール
-COPY --from=node:16.16.0 /usr/local/bin/node /usr/local/bin/
-COPY --from=node:16.16.0 /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=node:18.10.0 /usr/local/bin/node /usr/local/bin/
+COPY --from=node:18.10.0 /usr/local/lib/node_modules /usr/local/lib/node_modules
 RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
     && ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npx
 
