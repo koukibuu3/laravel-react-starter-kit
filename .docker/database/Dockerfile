@@ -1,3 +1,3 @@
-FROM postgres:13.8-alpine
+FROM postgres:13.13-alpine
 
 WORKDIR /var/lib/postgresql/data/pgdata
